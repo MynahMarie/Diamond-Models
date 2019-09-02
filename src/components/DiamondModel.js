@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import {
   View,
-  KeyboardAvoidingView,
   Text,
   StyleSheet,
-  Image,
   TextInput,
   Keyboard,
   Button,

@@ -44,6 +44,7 @@ export default class ModelScreen extends Component {
   };
 
   takeScreenShot = () => {
+    // eslint-disable-next-line react/no-string-refs
     this.refs.viewShot.capture().then(uri => {
       this.setState({imgUri: uri});
       CameraRollExtended.saveToCameraRoll(
@@ -87,6 +88,7 @@ export default class ModelScreen extends Component {
               flexDirection: 'row',
               justifyContent: 'center',
             }}>
+            {/* eslint-disable-next-line react/no-string-refs */}
             <ViewShot ref="viewShot" options={{format: 'jpg', quality: 0.9}}>
               <ScrollView
                 horizontal={true}
