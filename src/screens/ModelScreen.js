@@ -30,9 +30,14 @@ export default class ModelScreen extends Component {
   requestCameraPermission = async () => {
     try {
       const granted = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.CAMERA,
+        PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+        {
+          title: 'My App Storage Permission',
+          message:
+            'My App needs access to your storage so you can save your photos',
+        },
       );
-      console.log(granted);
+      console.log('granted = ', granted);
       if (granted === PermissionsAndroid.RESULTS.GRANTED) {
         this.takeScreenShot();
       } else {
@@ -48,10 +53,10 @@ export default class ModelScreen extends Component {
     this.refs.viewShot.capture().then(uri => {
       this.setState({imgUri: uri});
       CameraRollExtended.saveToCameraRoll(
-        {uri: this.state.imgUri, album: 'Diamond Models'},
+        {uri, album: 'Diamond Models', fileName: Date.now() + '.jpg'},
         'photo',
       )
-        .then(img => Alert.alert('Success! Photo added to camera roll!'))
+        .then(img => Alert.alert('Success! Photo added to camera roll!', img))
         .catch(error => {
           Alert.alert('Something went wrong...');
           console.log(error);
@@ -95,8 +100,8 @@ export default class ModelScreen extends Component {
                 contentContainerStyle={{marginTop: 0, marginBottom: 0}}>
                 <DiamondModel />
               </ScrollView>
-              <Text>{'\n\n\n\n\n\n\n'}</Text>
             </ViewShot>
+            <Text>{'\n\n\n\n\n\n\n'}</Text>
           </ScrollView>
         </ImageBackground>
       </View>
