@@ -69,14 +69,15 @@ requestCameraPermission = async () => {
               </TouchableOpacity>
             }
         />
-        <ImageBackground source={require('../assets/pattern.jpg')}
+        <ImageBackground source={require('../assets/64002-edit-verypale.jpg')}
         style={{ width: '100%', height: '100%' }}
         imageStyle={{ resizeMode: 'stretch' }}
         >
-        <ScrollView contentContainerStyle={{ margin: 60 }}>
+        <ScrollView contentContainerStyle={{ marginTop: 60, marginBottom: 60 }}>
           <ViewShot ref="viewShot" options={{ format: "jpg", quality: 0.9 }}>
             <DiamondModel />
           </ViewShot>
+          <Text>{"\n\n\n\n\n\n\n"}</Text>
         </ScrollView>
         </ImageBackground>
       </View>

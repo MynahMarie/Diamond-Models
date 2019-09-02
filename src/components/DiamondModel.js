@@ -110,7 +110,7 @@ export default class DiamondModel extends Component {
         <View style={styles.row}>
           <TextInput
           ref={ref => { this._box3 = ref }}
-          placeholder={'Box 3'}
+          placeholder={'3'}
           multiline={true}
           onFocus={() => this._onFocus(2)}
           onBlur={() => this._onBlur(2)}
@@ -122,7 +122,7 @@ export default class DiamondModel extends Component {
           />
           <TextInput
           ref={ref => { this._box2 = ref }}
-          placeholder={'Box 2'}
+          placeholder={'2'}
           multiline={true}
           onFocus={() => this._onFocus(1)}
           onBlur={() => this._onBlur(1)}
@@ -137,7 +137,7 @@ export default class DiamondModel extends Component {
         <View behavior="padding" style={styles.row}>
           <TextInput
           ref={ref => { this._box7 = ref }}
-          placeholder={'Box 7'}
+          placeholder={'7'}
           multiline={true}
           onFocus={() => this._onFocus(6)}
           onBlur={() => this._onBlur(6)}
@@ -149,7 +149,7 @@ export default class DiamondModel extends Component {
           />
           <TextInput
           ref={ref => { this._box6 = ref }}
-          placeholder={'Box 6'}
+          placeholder={'6'}
           multiline={true}
           onFocus={() => this._onFocus(5)}
           onBlur={() => this._onBlur(5)}
@@ -161,7 +161,7 @@ export default class DiamondModel extends Component {
           />
           <TextInput
           ref={ref => { this._box5 = ref }}
-          placeholder={'Box 5'}
+          placeholder={'5'}
           multiline={true}
           onFocus={() => this._onFocus(4)}
           onBlur={() => this._onBlur(4)}
@@ -173,7 +173,7 @@ export default class DiamondModel extends Component {
           />
           <TextInput
           ref={ref => { this._box4 = ref }}
-          placeholder={'Box 4'}
+          placeholder={'4'}
           multiline={true}
           onFocus={() => this._onFocus(3)}
           onBlur={() => this._onBlur(3)}
@@ -188,7 +188,7 @@ export default class DiamondModel extends Component {
         <View behavior="padding" style={styles.row}>
           <TextInput
           ref={ref => { this._box9 = ref }}
-          placeholder={'Box 9'}
+          placeholder={'9'}
           multiline={true}
           onFocus={() => this._onFocus(8)}
           onBlur={() => this._onBlur(8)}
@@ -200,7 +200,7 @@ export default class DiamondModel extends Component {
           />
           <TextInput
           ref={ref => { this._box8 = ref }}
-          placeholder={'Box 8'}
+          placeholder={'8'}
           multiline={true}
           onFocus={() => this._onFocus(7)}
           onBlur={() => this._onBlur(7)}
@@ -215,7 +215,7 @@ export default class DiamondModel extends Component {
         <View behavior="padding" style={styles.row}>
           <TextInput
           ref={ref => { this._box10 = ref }}
-          placeholder={'Box 10'}
+          placeholder={'Your Gap'}
           multiline={true}
           onFocus={() => this._onFocus(9)}
           onBlur={() => this._onBlur(9)}
@@ -245,7 +245,9 @@ const styles = StyleSheet.create({
     margin: 10,
     paddingLeft: 10,
     paddingRight: 10,
-    borderRadius: 6
+    borderRadius: 6,
+    textAlign: 'center',
+    fontSize: 16
   },
 
   modal: {
