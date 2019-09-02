@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { View, ScrollView, Text, StyleSheet, Image } from 'react-native'
+import { View, ScrollView, Text, StyleSheet, Image, Switch } from 'react-native'
 import { Header } from 'react-native-elements'
 import EnglishHowTo from '../components/EnglishHowTo'
+import HebrewHowTo from '../components/HebrewHowTo'
 import { BLUE, GRAY } from '../config/constants'
 
 export default class HowToScreen extends Component {
@@ -10,8 +11,17 @@ export default class HowToScreen extends Component {
     super(props);
 
     this.state = {
-      lang: 'en'
+      lang: 'en',
+      switchIsOn: false
     }
+  }
+
+  changeLang = () => {
+    let lang;
+    let switchIsOn = !this.state.switchIsOn
+    this.state.lang === 'en' ? lang = 'he' : lang = 'en';
+    
+    this.setState({ lang, switchIsOn });
   }
 
   render() {
@@ -20,9 +30,13 @@ export default class HowToScreen extends Component {
       <Header containerStyle={{ backgroundColor: '#248DAE', padding: 20, justifyContent: 'space-around' }}
           leftComponent={<Image source={require('../assets/diamond.png')} style={{ width: 45, height: 40 }} />}
           centerComponent={{ text: 'Diamond Models', style: { color: 'white', fontSize: 20 } }}
-          rightComponent={{ icon: 'camera-enhance', color: 'white', size: 45 }}
+          rightComponent={
+            <View>
+            <Switch trackColor={{false: "#5e6977", true: "#5e6977"}} thumbColor='#f6f6f6' value={this.state.switchIsOn} onChange={this.changeLang}/>
+            <Text style={{color: 'white'}}>EN/HE</Text>
+            </View>}
       />
-      {this.state.lang === 'en' ? <EnglishHowTo /> : <Text>Hebrew will go here.</Text>}
+      {this.state.lang === 'en' ? <EnglishHowTo /> : <HebrewHowTo />}
       </View>
     )
   }

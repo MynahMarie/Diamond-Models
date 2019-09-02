@@ -69,6 +69,12 @@ export default class DiamondModel extends Component {
     this.setState({ modalVisible: visible });
   }
 
+  clearModel = () => {
+    let inputs = this.state.inputs.slice();
+    inputs.forEach(item => { item.text = '' });
+    this.setState({ inputs });
+  }
+
   render() {
     return (
       <View style={{ flex: 1, flexDirection: 'column' }}>
@@ -226,6 +232,9 @@ export default class DiamondModel extends Component {
           value={this.state.inputs[9].text}
           />
         </View>
+        <View style={styles.btn}>
+        <Button color={GRAY} onPress={this.clearModel} title="Clear"/>
+        </View>
       </View>
     )
   }
@@ -256,5 +265,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 3,
     padding: 22
+  },
+
+  btn: {
+    marginRight: '25%',
+    marginLeft: '25%',
+    marginTop: 30,
+    marginBottom: 30
   }
 })

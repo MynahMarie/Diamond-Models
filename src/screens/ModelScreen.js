@@ -73,11 +73,13 @@ requestCameraPermission = async () => {
         style={{ width: '100%', height: '100%' }}
         imageStyle={{ resizeMode: 'stretch' }}
         >
-        <ScrollView contentContainerStyle={{ marginTop: 60, marginBottom: 60 }}>
+        <ScrollView contentContainerStyle={{ marginTop: 30, marginBottom: 60, flexDirection: 'row', justifyContent: 'center' }}>
           <ViewShot ref="viewShot" options={{ format: "jpg", quality: 0.9 }}>
+          <ScrollView horizontal={true} contentContainerStyle={{ marginTop: 0, marginBottom: 0 }}>
             <DiamondModel />
-          </ViewShot>
+          </ScrollView>
           <Text>{"\n\n\n\n\n\n\n"}</Text>
+          </ViewShot>
         </ScrollView>
         </ImageBackground>
       </View>
